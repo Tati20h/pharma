@@ -58,13 +58,21 @@ const columns = [
 
 const rows = [
   { id: 1, lastName: "Snow", firstName: "Jon", age: 14, action: true },
+  { id: 1, lastName: "Snow", firstName: "Jon", age: 14, action: true },
+  { id: 1, lastName: "Snow", firstName: "Jon", age: 14, action: true },
+  { id: 1, lastName: "Snow", firstName: "Jon", age: 14, action: true },
+  { id: 1, lastName: "Snow", firstName: "Jon", age: 14, action: true },
+  { id: 1, lastName: "Snow", firstName: "Jon", age: 14, action: true },
+  { id: 1, lastName: "Snow", firstName: "Jon", age: 14, action: true },
+  { id: 1, lastName: "Snow", firstName: "Jon", age: 14, action: true },
+  { id: 1, lastName: "Snow", firstName: "Jon", age: 14, action: true },
 ];
 
 export default function DataGridDemo() {
   return (
    
 
-    <Box sx={{ height:"100%" ,
+    <Box sx={{ height:500 ,
        width: "100%" ,
      backgroundImage: 'url(https://github.com/Tati20h/pharma/blob/main/src/assets/logo.png?raw=true)',
      backgroundRepeat: 'no-repeat',
