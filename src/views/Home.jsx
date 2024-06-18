@@ -9,7 +9,7 @@ export const Home = () => {
     <>
     <Header/>
       <FilterData />
-
+     
    <Footer/>
     </>
   );

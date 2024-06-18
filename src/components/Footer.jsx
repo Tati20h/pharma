@@ -1,37 +1,136 @@
-import React from 'react';
-import { FaPhone, FaEnvelope, FaMapMarker } from 'react-icons/fa'; 
+import React from "react";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
+import XIcon from '@mui/icons-material/X';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import "./Footer.css";
+import Pharma from '../assets/logo.png';
 
-const Footer = () => {
+function Footer() {
   return (
     <footer className="footer">
-      <div className="footer-content">
-        <div className="footer-contac">
-          <h4>Contacto</h4>
-          <p><FaPhone /> +34 123 456 789</p>
-          <p><FaEnvelope /> contacto@farmaciaejemplo.es</p>
-          <p><FaMapMarker /> Calle Ejemplo, 123, Málaga, España</p>
+      <div className="footer-container">
+        <div className="footer-newsletter">
+          <h1 className="footer-newsletter__header">Contact us</h1>
+
+          <div className="footer-newsletter__icons">
+            <a href="https://www.linkedin.com/company/fda/">
+              <LinkedInIcon fontSize="large" color="black" />
+            </a>
+            <a href="https://www.facebook.com/FDA">
+              <FacebookRoundedIcon fontSize="large" color="black" />
+            </a>
+            <a href="https://x.com/US_FDA">
+              <XIcon fontSize="large" color="black" />
+            </a>
+            <a href="https://instagram.com/FDA">
+              <InstagramIcon fontSize="large" color="black" />
+            </a>
+          
+          </div>
+          <div>
+          <img className='Logo' src={Pharma} alt="animation" color="white" width={130} />
         </div>
-        <div className="footer-section">
-          <h4>Enlaces Rápidos</h4>
-          <ul>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-          </ul>
         </div>
-        <div className="footer-legal">
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="#politica-privacidad">Política de Privacidad</a></li>
-            <li><a href="#terminos-servicio">Términos de Servicio</a></li>
-          </ul>
+        <div className="footer-body">
+          <div className="footer-body__content">
+            <p>
+            Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.
+            </p>
+          </div>
+          <nav className="footer-body__nav">
+            <ul className="footer-body__nav-list">
+              <li className="footer-body__nav-item">
+                Services
+                <ul className="footer-body__nav-sublist">
+                  <li className="footer-body__nav-subitem">
+                    <a href="" className="footer-body__nav-link">
+                      Marketing
+                    </a>
+                  </li>
+                  <li className="footer-body__nav-subitem">
+                    <a href="" className="footer-body__nav-link">
+                      Design
+                    </a>
+                  </li>
+                  <li className="footer-body__nav-subitem">
+                    <a href="" className="footer-body__nav-link">
+                      App Development
+                    </a>
+                  </li>
+                  <li className="footer-body__nav-subitem">
+                    <a href="" className="footer-body__nav-link">
+                      Web development
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li className="footer-body__nav-item">
+                About
+                <ul className="footer-body__nav-sublist">
+                  <li className="footer-body__nav-subitem">
+                    <a
+                      href="https://www.fda.gov/"
+                      className="footer-body__nav-link"
+                    >
+                      About
+                    </a>
+                  </li>
+                  <li className="footer-body__nav-subitem">
+                    <a
+                      href="https://www.fda.gov/about-fda/jobs-and-training-fda"
+                      className="footer-body__nav-link"
+                    >
+                      Careers
+                    </a>
+                  </li>
+                  <li className="footer-body__nav-subitem">
+                    <a
+                      href="https://www.fda.gov/about-fda/transparency/fda-basics"
+                      className="footer-body__nav-link"
+                    >
+                      FDA Basics
+                    </a>
+                  </li>
+                  <li className="footer-body__nav-subitem">
+                    <a
+                      href="https://www.fda.gov/about-fda/transparency"
+                      className="footer-body__nav-link"
+                    >
+                      Transparency
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li className="footer-body__nav-item">
+                Support
+                <ul className="footer-body__nav-sublist">
+                  <li className="footer-body__nav-subitem">
+                    <a href="https://open.fda.gov/terms/" className="footer-body__nav-link">
+                    Terms"
+                    </a>
+                  </li>
+                  <li className="footer-body__nav-subitem">
+                    <a href="https://open.fda.gov/license/" className="footer-body__nav-link">
+                      license
+                    </a>
+                  </li>
+                  <li className="footer-body__nav-subitem">
+                    <a href="" className="footer-body__nav-link">
+                      Live chat
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
         </div>
-      </div>
-      <div className="footer-bottom">
-        <p>Todos los derechos reservados © {new Date().getFullYear()} | Farmacia Ejemplo</p>
+        <div className="footer-attribute">
+          <p>&copy; Company 2024. All right reserved.</p>
+        </div>
       </div>
     </footer>
   );
-};
+}
 
 export default Footer;
