@@ -1,34 +1,29 @@
-export const getFullData = () => {
-    const url = `https://api.fda.gov/drug/ndc.json?limit=40`;
-    fetch(url)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok " + response.statusText);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log("Success:", data);
-      })
-      .catch((error) => {
-        console.error("Fetch error:", error);
-      });
-  };
-  
+export const getFullData = async () => {
+  const url = `https://api.fda.gov/drug/ndc.json?limit=40`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error("Error response in getFullData " + response.statusText);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Fetch error:", error);
+    return null;
+  }
+};
 
-export const getDataByName = (name) => {
+export const getDataByName = async (name) => {
   const url = `https://api.fda.gov/drug/ndc.json?search=brand_name:${name}&limit=40`;
-  fetch(url)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Network response was not ok " + response.statusText);
-      }
-      return response.json();
-    })
-    .then((data) => {
-      console.log("Success:", data);
-    })
-    .catch((error) => {
-      console.error("Fetch error:", error);
-    });
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error("Error response in getDataByName " + response.statusText);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Fetch error:", error);
+    return null;
+  }
 };

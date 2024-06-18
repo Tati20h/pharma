@@ -1,89 +1,56 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
-
-
-const columns = [
-  { field: "id", headerName: "ID", width: 60,  },
-  {
-    field: "generic_name",
-    headerName: "generic Name",
-    width: 200,
-    editable: true,
-  },
-  {
-    field: "lastName",
-    headerName: "Last name",
-    width: 150,
-    editable: true,
-  },
-  {
-    field: "lastName",
-    headerName: "Last name",
-    width: 150,
-    editable: true,
-  },
-  {
-    field: "lastName",
-    headerName: "Last name",
-    width: 150,
-    editable: true,
-  },
-  {
-    field: "age",
-    headerName: "Age",
-    type: "number",
-    width: 110,
-    editable: true,
-  },
-  {
-    field: "fullName",
-    headerName: "Full name",
-    description: "This column has a value getter and is not sortable.",
-    sortable: false,
-    width: 160,
-    valueGetter: (value, row) => `${row.firstName || ""} ${row.lastName || ""}`,
-  },
-  {
-    field: "action",
-    headerName: "Action",
-    sortable: false,
-    renderCell: ({ row }: Partial<GridRowParams>) => (
-      <a href="https://www.example.com">
-        <button>ver mas</button>
-      </a>
-    ),
-  },
-];
-
-const rows = [
-  { id: 1, lastName: "Snow", firstName: "Jon", age: 14, action: true },
-  { id: 1, lastName: "Snow", firstName: "Jon", age: 14, action: true },
-  { id: 1, lastName: "Snow", firstName: "Jon", age: 14, action: true },
-  { id: 1, lastName: "Snow", firstName: "Jon", age: 14, action: true },
-  { id: 1, lastName: "Snow", firstName: "Jon", age: 14, action: true },
-  { id: 1, lastName: "Snow", firstName: "Jon", age: 14, action: true },
-  { id: 1, lastName: "Snow", firstName: "Jon", age: 14, action: true },
-  { id: 1, lastName: "Snow", firstName: "Jon", age: 14, action: true },
-  { id: 1, lastName: "Snow", firstName: "Jon", age: 14, action: true },
-];
+import "@fontsource/roboto/700.css";
+import { principalData } from "../../services/data";
+import { columns } from "../../utils/components";
 
 export default function DataGridDemo() {
-  return (
-   
+  const [rows, setRows] = useState([]);
 
-    <Box sx={{ height:500 ,
-       width: "100%" ,
-     backgroundImage: 'url(https://github.com/Tati20h/pharma/blob/main/src/assets/logo.png?raw=true)',
-     backgroundRepeat: 'no-repeat',
-     backgroundPosition: 'center' }}>
+  useEffect(() => {
+    const getFullData = async () => {
+      try {
+        const data = await principalData();
+        setRows(data);
+      } catch (error) {
+        console.error("Error getting data:", error);
+      }
+    };
+
+    getFullData();
+  }, []);
+
+  return (
+    <Box
+      sx={{
+        position: "relative",
+        width: "90%",
+        height: "90vh",
+        color: "#000", // Color de texto oscuro
+        left: 60,
+        "&::before": {
+          content: '""',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          backgroundImage:
+            "url(https://github.com/Tati20h/pharma/blob/main/src/assets/logo.png?raw=true)",
+          backgroundPosition: "bottom center", // Ajustar imagen de fondo a la parte inferior central
+          backgroundRepeat: "no-repeat",
+          opacity: 0.5, // Ajusta la opacidad aquí
+        },
+      }}
+    >
       <DataGrid
         rows={rows}
         columns={columns}
         initialState={{
           pagination: {
             paginationModel: {
-              pageSize: 5,
+              pageSize: 15,
             },
           },
         }}

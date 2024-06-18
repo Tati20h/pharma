@@ -12,7 +12,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import Pharma from '../assets/pharma.png';
+import pharma from "../assets/img/pharma.png";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -123,9 +123,8 @@ export default function Header() {
             <MailIcon />
           </Badge>
         </IconButton>
-    
       </MenuItem>
-    
+
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
@@ -145,10 +144,15 @@ export default function Header() {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-        
           <div>
-          <img className='Logo' src={Pharma} alt="animation" color="white" width={130} />
-        </div>
+            <img
+              className="Logo"
+              src={pharma}
+              alt="animation"
+              color="white"
+              width={100}
+            />
+          </div>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -158,7 +162,7 @@ export default function Header() {
               inputProps={{ "aria-label": "search" }}
             />
           </Search>
-         
+
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
             <IconButton

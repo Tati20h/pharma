@@ -1,10 +1,9 @@
 import React from "react";
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import FacebookRoundedIcon from '@mui/icons-material/FacebookRounded';
-import XIcon from '@mui/icons-material/X';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import "./Footer.css";
-import Pharma from '../assets/logo.png';
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import FacebookRoundedIcon from "@mui/icons-material/FacebookRounded";
+import XIcon from "@mui/icons-material/X";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import "../assets/css/Footer.css";
 
 function Footer() {
   return (
@@ -26,16 +25,17 @@ function Footer() {
             <a href="https://instagram.com/FDA">
               <InstagramIcon fontSize="large" color="black" />
             </a>
-          
           </div>
-          <div>
-          <img className='Logo' src={Pharma} alt="animation" color="white" width={130} />
         </div>
-        </div>
+
         <div className="footer-body">
           <div className="footer-body__content">
             <p>
-            Do not rely on openFDA to make decisions regarding medical care. While we make every effort to ensure that data is accurate, you should assume all results are unvalidated. We may limit or otherwise restrict your access to the API in line with our Terms of Service.
+              Do not rely on openFDA to make decisions regarding medical care.
+              While we make every effort to ensure that data is accurate, you
+              should assume all results are unvalidated. We may limit or
+              otherwise restrict your access to the API in line with our Terms
+              of Service.
             </p>
           </div>
           <nav className="footer-body__nav">
@@ -106,12 +106,18 @@ function Footer() {
                 Support
                 <ul className="footer-body__nav-sublist">
                   <li className="footer-body__nav-subitem">
-                    <a href="https://open.fda.gov/terms/" className="footer-body__nav-link">
-                    Terms"
+                    <a
+                      href="https://open.fda.gov/terms/"
+                      className="footer-body__nav-link"
+                    >
+                      Terms"
                     </a>
                   </li>
                   <li className="footer-body__nav-subitem">
-                    <a href="https://open.fda.gov/license/" className="footer-body__nav-link">
+                    <a
+                      href="https://open.fda.gov/license/"
+                      className="footer-body__nav-link"
+                    >
                       license
                     </a>
                   </li>
