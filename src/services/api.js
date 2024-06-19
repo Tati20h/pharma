@@ -27,3 +27,20 @@ export const getDataByName = async (name) => {
     return null;
   }
 };
+
+export const getAdvertising = async (id) => {
+  const url = `https://api.fda.gov/drug/label.json?search=openfda.product_ndc.exact:${id}&limit=1`;
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(
+        "Error response in getAdvertising " + response.statusText
+      );
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Fetch error:", error);
+    return null;
+  }
+};

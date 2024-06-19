@@ -8,7 +8,7 @@ export const BaseRouter = () => {
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<Home />} />
-        <Route path='/result' element={<Result />} />
+        <Route path="/result/:id" element={<Result />} />
       </Routes>
     </BrowserRouter>
   );

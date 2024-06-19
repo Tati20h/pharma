@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #fff;
 }
 
 .App-link {
@@ -39,12 +39,32 @@
 
 
 .data {
+
   border-top: 1px solid #ddd;
   display: flex;
   flex-wrap: wrap;
-  gap: 90px;
+  gap: 20px;
   justify-content: space-evenly;
-  padding: 5em 3em 3.5em;
+  padding: 3em 3em 3em;
 }
 
+.box{
+  align-items: flex-start;
+  border-radius: 20px;
+  cursor: pointer;
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  max-width: 100%;
+  position: relative;
+  transition: .5s;
+  width: 200px;
+  position: relative;
+}
 
+.advt {
+border-top: 1px solid #ddd;
+  display: block;
+ 
+  
+}

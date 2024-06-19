@@ -6,14 +6,29 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Link } from "react-router-dom";
 
+const blue = "#3498DB ";
+const gray = "#f5f5f5";
+
 export default function OutlinedCard({ results }) {
+  const MAX_TEXT_LENGTH = 70;
+
+  const truncateText = (text) => {
+    if (text.length <= MAX_TEXT_LENGTH) {
+      return text;
+    }
+    return text.slice(0, MAX_TEXT_LENGTH) + "...";
+  };
+
   return (
     <section className="data">
       {results.length > 0 ? (
         results.map((res) => {
           return (
-            <Box sx={{ Width: 370 }}>
-              <Card >
+            <Box className="box" sx={{ minWidth: 275 }}>
+              <Card
+                variant="outlined"
+                style={{ background: gray, color: blue, opacity: 0.9 }}
+              >
                 <React.Fragment>
                   <CardContent>
                     <Typography
@@ -21,22 +36,22 @@ export default function OutlinedCard({ results }) {
                       color="text.secondary"
                       gutterBottom
                     >
-                      {res.generic_name}
+                      {truncateText(res.brand_name)}
                     </Typography>
-                    <Typography variant="h5" component="div">
-                      {res.brand_name}
+                    <Typography
+                      variant="h6"
+                      style={{ color: blue }}
+                      component="div"
+                    >
+                      {truncateText(res.generic_name)}
                     </Typography>
                     <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                      adjective
+                      {res.route[0]}
                     </Typography>
-                    <Typography variant="body2">
-                      well meaning and kindly.
-                      <br />
-                      {'"a benevolent smile"'}
-                    </Typography>
+                    <Typography variant="body2">{res.dosage_form}</Typography>
                   </CardContent>
 
-                  <Link to="/result">
+                  <Link to={`/result/${res.product_ndc}`}>
                     <Button size="small">Learn More</Button>
                   </Link>
                 </React.Fragment>

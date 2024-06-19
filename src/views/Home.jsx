@@ -11,7 +11,6 @@ export const Home = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      console.log("mi coso ", name);
       if (name.length === 0) {
         setResults([]);
         return;
@@ -28,7 +27,7 @@ export const Home = () => {
 
     const delayDebounceFn = setTimeout(() => {
       fetchData();
-    }, 300);
+    }, 50);
 
     return () => clearTimeout(delayDebounceFn);
   }, [name]);
@@ -36,7 +35,7 @@ export const Home = () => {
   return (
     <>
       <Header showSearch={true} name={name} setName={setName} />
-      {name === "" ? <FilterData /> : <OutlinedCard results={results}/>}
+      {name === "" ? <FilterData /> : <OutlinedCard results={results} />}
       <Footer />
     </>
   );

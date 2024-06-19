@@ -50,12 +50,16 @@ export const columns = [
     field: "action",
     headerName: "Action",
     sortable: false,
-    renderCell: ({ row }: Partial<GridRowParams>) => (
-      <Link to="/result">
-        <Button size="small" variant="outlined" href="https://www.google.com/">
+    renderCell: (params) => (
+      <Link to={`/result/${params.row.id}`}>
+        <Button size="small" variant="outlined">
           See more
         </Button>
       </Link>
     ),
   },
 ];
+
+export const handleButtonClick = (id) => {
+  console.log("Button clicked for row with id:", id);
+};
