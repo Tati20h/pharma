@@ -9,8 +9,6 @@ import  logo from "../../assets/img/logo.png";
 export default function CardAdditionalData() {
   return (
     <section className="data">
-
-   
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
       <div>
