@@ -44,24 +44,18 @@ function Footer() {
                 Services
                 <ul className="footer-body__nav-sublist">
                   <li className="footer-body__nav-subitem">
-                    <a href="" className="footer-body__nav-link">
-                      Marketing
-                    </a>
+                    <p className="footer-body__nav-link">Marketing</p>
                   </li>
                   <li className="footer-body__nav-subitem">
-                    <a href="" className="footer-body__nav-link">
-                      Design
-                    </a>
+                    <a className="footer-body__nav-link">Design</a>
                   </li>
                   <li className="footer-body__nav-subitem">
-                    <a href="" className="footer-body__nav-link">
+                    <p  className="footer-body__nav-link">
                       App Development
-                    </a>
+                    </p>
                   </li>
                   <li className="footer-body__nav-subitem">
-                    <a href="" className="footer-body__nav-link">
-                      Web development
-                    </a>
+                    <p className="footer-body__nav-link">Web development</p>
                   </li>
                 </ul>
               </li>
@@ -122,9 +116,8 @@ function Footer() {
                     </a>
                   </li>
                   <li className="footer-body__nav-subitem">
-                    <a href="" className="footer-body__nav-link">
-                      Live chat
-                    </a>
+                    
+                    <a className="footer-body__nav-link">Live chat</a>
                   </li>
                 </ul>
               </li>

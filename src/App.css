@@ -38,6 +38,13 @@
 }
 
 
-
+.data {
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 90px;
+  justify-content: space-evenly;
+  padding: 5em 3em 3.5em;
+}
 
 

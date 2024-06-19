@@ -1,4 +1,5 @@
 import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 export const columns = [
   { field: "id", headerName: "ndc", width: 60 },
@@ -50,9 +51,11 @@ export const columns = [
     headerName: "Action",
     sortable: false,
     renderCell: ({ row }: Partial<GridRowParams>) => (
-      <Button size="small" variant="outlined" href="https://www.google.com/">
-        See more
-      </Button>
+      <Link to="/result">
+        <Button size="small" variant="outlined" href="https://www.google.com/">
+          See more
+        </Button>
+      </Link>
     ),
   },
 ];

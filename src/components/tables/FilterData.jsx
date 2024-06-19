@@ -24,10 +24,11 @@ export default function DataGridDemo() {
   return (
     <Box
       sx={{
+        marginTop:0.8,
         position: "relative",
-        width: "90%",
+        width: "95%",
         height: "90vh",
-        color: "#000", // Color de texto oscuro
+        color: "#000", 
         left: 60,
         "&::before": {
           content: '""',
@@ -37,10 +38,10 @@ export default function DataGridDemo() {
           width: "100%",
           height: "100%",
           backgroundImage:
-            "url(https://github.com/Tati20h/pharma/blob/main/src/assets/logo.png?raw=true)",
-          backgroundPosition: "bottom center", // Ajustar imagen de fondo a la parte inferior central
+            "url(https://github.com/Tati20h/pharma/blob/main/src/assets/img/logo.png?raw=true)",
+          backgroundPosition: "center", 
           backgroundRepeat: "no-repeat",
-          opacity: 0.5, // Ajusta la opacidad aquí
+          opacity: 0.5, 
         },
       }}
     >
@@ -54,7 +55,7 @@ export default function DataGridDemo() {
             },
           },
         }}
-        pageSizeOptions={[15]}
+        pageSizeOptions={[1]}
       />
     </Box>
   );
