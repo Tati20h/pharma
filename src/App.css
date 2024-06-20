@@ -37,9 +37,7 @@
   }
 }
 
-
 .data {
-
   border-top: 1px solid #ddd;
   display: flex;
   flex-wrap: wrap;
@@ -48,7 +46,7 @@
   padding: 3em 3em 3em;
 }
 
-.box{
+.box {
   align-items: flex-start;
   border-radius: 20px;
   cursor: pointer;
@@ -57,14 +55,17 @@
   justify-content: center;
   max-width: 100%;
   position: relative;
-  transition: .5s;
+  transition: 0.5s;
   width: 200px;
   position: relative;
 }
 
 .advt {
-border-top: 1px solid #ddd;
-  display: block;
- 
-  
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-evenly;
+  padding: 3em 3em 3em;
+
 }

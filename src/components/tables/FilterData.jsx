@@ -3,19 +3,15 @@ import Box from "@mui/material/Box";
 import { DataGrid } from "@mui/x-data-grid";
 import "@fontsource/roboto/700.css";
 import { principalData } from "../../services/data";
-import { columns } from "../../utils/components";
+import { columns } from "./columns";
 
 export default function DataGridDemo() {
   const [rows, setRows] = useState([]);
 
   useEffect(() => {
     const getFullData = async () => {
-      try {
-        const data = await principalData();
-        setRows(data);
-      } catch (error) {
-        console.error("Error getting data:", error);
-      }
+      const data = await principalData();
+      setRows(data);
     };
 
     getFullData();
@@ -24,12 +20,13 @@ export default function DataGridDemo() {
   return (
     <Box
       sx={{
-        marginTop:0.8,
+        marginTop: 0.8,
         position: "relative",
-        width: "95%",
-        height: "90vh",
-        color: "#000", 
-        left: 60,
+        width: "100%",
+        height: "100%",
+        color: "#000",
+        left: 0,
+        padding: 2,
         "&::before": {
           content: '""',
           position: "absolute",
@@ -39,9 +36,9 @@ export default function DataGridDemo() {
           height: "100%",
           backgroundImage:
             "url(https://github.com/Tati20h/pharma/blob/main/src/assets/img/logo.png?raw=true)",
-          backgroundPosition: "center", 
+          backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          opacity: 0.5, 
+          opacity: 0.5,
         },
       }}
     >

@@ -1,12 +1,15 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom";
+import "@fontsource/roboto/700.css";
+import logo from "../../assets/img/logo.png";
+import { SeeMore } from "../buttons/SeeMore";
 
-const blue = "#3498DB ";
+const orange = "#DC7633 ";
+const black = "#010101";
 const gray = "#f5f5f5";
 
 export default function OutlinedCard({ results }) {
@@ -20,16 +23,32 @@ export default function OutlinedCard({ results }) {
   };
 
   return (
-    <section className="data">
+    <Grid
+      container
+      spacing={3}
+      justifyContent="space-evenly"
+      alignItems="center"
+      style={{ padding: 50, gap: 20 }}
+    >
       {results.length > 0 ? (
         results.map((res) => {
           return (
-            <Box className="box" sx={{ minWidth: 275 }}>
+            <Box className="box" sx={{ minWidth: 300, height: "100%" }}>
               <Card
                 variant="outlined"
-                style={{ background: gray, color: blue, opacity: 0.9 }}
+                style={{ background: gray, color: black, opacity: 0.9 }}
               >
                 <React.Fragment>
+                  <div>
+                    <img
+                      className="icon"
+                      src={logo}
+                      alt="animation"
+                      color="white"
+                      width={120}
+                    />
+                  </div>
+
                   <CardContent>
                     <Typography
                       sx={{ fontSize: 14 }}
@@ -40,20 +59,23 @@ export default function OutlinedCard({ results }) {
                     </Typography>
                     <Typography
                       variant="h6"
-                      style={{ color: blue }}
+                      style={{ color: orange }}
                       component="div"
                     >
                       {truncateText(res.generic_name)}
                     </Typography>
-                    <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                      {res.route[0]}
-                    </Typography>
+                    {res.route
+                      ? res.route.map((r) => {
+                          return (
+                            <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                              {r}
+                            </Typography>
+                          );
+                        })
+                      : ""}
                     <Typography variant="body2">{res.dosage_form}</Typography>
                   </CardContent>
-
-                  <Link to={`/result/${res.product_ndc}`}>
-                    <Button size="small">Learn More</Button>
-                  </Link>
+                  <SeeMore id={res.product_ndc} />
                 </React.Fragment>
               </Card>
             </Box>
@@ -62,6 +84,6 @@ export default function OutlinedCard({ results }) {
       ) : (
         <span>No hay resultados</span>
       )}
-    </section>
+    </Grid>
   );
 }

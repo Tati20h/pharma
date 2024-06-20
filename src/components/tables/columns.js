@@ -1,5 +1,5 @@
-import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
+import { Button } from "@mui/material";
+import { SeeMore } from "../buttons/SeeMore";
 
 export const columns = [
   { field: "id", headerName: "ndc", width: 60 },
@@ -50,13 +50,7 @@ export const columns = [
     field: "action",
     headerName: "Action",
     sortable: false,
-    renderCell: (params) => (
-      <Link to={`/result/${params.row.id}`}>
-        <Button size="small" variant="outlined">
-          See more
-        </Button>
-      </Link>
-    ),
+    renderCell: (params) => <SeeMore id={params.row.id} />,
   },
 ];
 

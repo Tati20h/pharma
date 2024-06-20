@@ -5,8 +5,7 @@ import Footer from "../components/Footer";
 import OutlinedCard from "../components/cards/OutlinedCard";
 import { getDataByName } from "../services/api";
 
-export const Home = () => {
-  const [name, setName] = useState("");
+export const Home = ({ name, setName }) => {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
@@ -15,14 +14,8 @@ export const Home = () => {
         setResults([]);
         return;
       }
-      try {
-        const { results } = await getDataByName(name);
-        console.log(results);
-        setResults(results);
-      } catch (error) {
-        setResults([]);
-        return;
-      }
+      const results = await getDataByName(name);
+      setResults(results);
     };
 
     const delayDebounceFn = setTimeout(() => {

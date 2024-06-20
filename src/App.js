@@ -1,5 +1,6 @@
 import "./App.css";
 import { BaseRouter } from "./router/BaseRouter";
+import "@fontsource/roboto/700.css";
 
 function App() {
   return (

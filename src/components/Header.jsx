@@ -7,10 +7,12 @@ import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
+import MoreIcon from "@mui/icons-material/MoreVert";
 import MailIcon from "@mui/icons-material/Mail";
 import pharma from "../assets/img/pharma.png";
 import icon from "../assets/img/eeuu.png";
 import { SearchBar } from "./labels/SearchBar";
+import { Link } from "react-router-dom";
 
 export default function Header({ showSearch, name, setName }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -31,6 +33,10 @@ export default function Header({ showSearch, name, setName }) {
     handleMobileMenuClose();
   };
 
+  const handleMobileMenuOpen = (event) => {
+    setMobileMoreAnchorEl(event.currentTarget);
+  };
+
   const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
@@ -47,10 +53,7 @@ export default function Header({ showSearch, name, setName }) {
       }}
       open={isMenuOpen}
       onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-    </Menu>
+    ></Menu>
   );
 
   const mobileMenuId = "primary-search-account-menu-mobile";
@@ -70,14 +73,6 @@ export default function Header({ showSearch, name, setName }) {
       open={isMobileMenuOpen}
       onClose={handleMobileMenuClose}
     >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-      </MenuItem>
-
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
@@ -93,19 +88,25 @@ export default function Header({ showSearch, name, setName }) {
     </Menu>
   );
 
+  const handleLogoClick = () => {
+    setName("");
+  };
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <div>
-            <img
-              className="Logo"
-              src={pharma}
-              alt="animation"
-              color="white"
-              width={100}
-            />
-          </div>
+          <Link to="/home">
+            <div onClick={handleLogoClick}>
+              <img
+                className="Logo"
+                src={pharma}
+                alt="animation"
+                color="white"
+                width={100}
+              />
+            </div>
+          </Link>
           {showSearch && <SearchBar name={name} setName={setName} />}
 
           <Box sx={{ flexGrow: 0.95 }} />
@@ -129,6 +130,19 @@ export default function Header({ showSearch, name, setName }) {
             >
               <AccountCircle />
             </IconButton>
+
+            <Box sx={{ display: { xs: "flex", md: "none" } }}>
+              <IconButton
+                size="large"
+                aria-label="show more"
+                aria-controls={mobileMenuId}
+                aria-haspopup="true"
+                onClick={handleMobileMenuOpen}
+                color="inherit"
+              >
+                <MoreIcon />
+              </IconButton>
+            </Box>
           </Box>
         </Toolbar>
       </AppBar>
