@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import { SeeMore } from "../buttons/SeeMore";
 
 export const columns = [
@@ -53,7 +52,3 @@ export const columns = [
     renderCell: (params) => <SeeMore id={params.row.id} />,
   },
 ];
-
-export const handleButtonClick = (id) => {
-  console.log("Button clicked for row with id:", id);
-};

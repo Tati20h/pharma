@@ -1,6 +1,7 @@
-export const getFullData = async () => {
-  const url = `https://api.fda.gov/drug/ndc.json?limit=100`;
+const baseUrl = "https://api.fda.gov/drug";
 
+export const getFullData = async () => {
+  const url = `${baseUrl}/ndc.json?limit=100`;
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -16,7 +17,7 @@ export const getFullData = async () => {
 };
 
 export const getDataByName = async (name) => {
-  const url = `https://api.fda.gov/drug/ndc.json?search=brand_name:${name}&limit=40`;
+  const url = `${baseUrl}/ndc.json?search=brand_name:${name}&limit=40`;
   try {
     const response = await fetch(url);
     if (!response.ok) {
@@ -32,7 +33,7 @@ export const getDataByName = async (name) => {
 };
 
 export const getAdvertising = async (id) => {
-  const url = `https://api.fda.gov/drug/label.json?search=openfda.product_ndc.exact:${id}&limit=1`;
+  const url = `${baseUrl}/label.json?search=openfda.product_ndc.exact:${id}&limit=1`;
   try {
     const response = await fetch(url);
     if (!response.ok) {

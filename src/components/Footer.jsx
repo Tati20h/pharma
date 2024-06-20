@@ -33,7 +33,7 @@ function Footer() {
             <p>
               Do not rely on openFDA to make decisions regarding medical care.
               While we make every effort to ensure that data is accurate, you
-              should assume all results are unvalidated. We may limit or
+              should assume all results are un validated. We may limit or
               otherwise restrict your access to the API in line with our Terms
               of Service.
             </p>
@@ -47,12 +47,10 @@ function Footer() {
                     <p className="footer-body__nav-link">Marketing</p>
                   </li>
                   <li className="footer-body__nav-subitem">
-                    <a className="footer-body__nav-link">Design</a>
+                    <p className="footer-body__nav-link">Design</p>
                   </li>
                   <li className="footer-body__nav-subitem">
-                    <p  className="footer-body__nav-link">
-                      App Development
-                    </p>
+                    <p className="footer-body__nav-link">App Development</p>
                   </li>
                   <li className="footer-body__nav-subitem">
                     <p className="footer-body__nav-link">Web development</p>
@@ -104,7 +102,7 @@ function Footer() {
                       href="https://open.fda.gov/terms/"
                       className="footer-body__nav-link"
                     >
-                      Terms"
+                      Terms
                     </a>
                   </li>
                   <li className="footer-body__nav-subitem">
@@ -116,8 +114,7 @@ function Footer() {
                     </a>
                   </li>
                   <li className="footer-body__nav-subitem">
-                    
-                    <a className="footer-body__nav-link">Live chat</a>
+                    <p className="footer-body__nav-link">Live chat</p>
                   </li>
                 </ul>
               </li>

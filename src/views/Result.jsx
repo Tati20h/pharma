@@ -14,7 +14,7 @@ export const Result = ({ name, setName }) => {
       setAdvertisement(data);
     };
     getFullData();
-  }, []);
+  }, [id]);
 
   return (
     <>
