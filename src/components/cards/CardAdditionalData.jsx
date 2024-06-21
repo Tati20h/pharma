@@ -23,8 +23,8 @@ export default function CardAdditionalData({ advertisement }) {
       container
       spacing={2}
       justifyContent="center"
-       alignItems="stretch"
-      style={{ padding: 30, gap: 20,  minHeight: "100vh" }}
+      alignItems="stretch"
+      style={{ padding: 30, gap: 20, minHeight: "100vh" }}
     >
       {advertisement.length > 0 ? (
         advertisement.map((ad) => {
@@ -33,7 +33,7 @@ export default function CardAdditionalData({ advertisement }) {
               <Card
                 sx={{
                   maxWidth: 345,
-                 Height:"100%",
+                  Height: "100%",
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
@@ -47,7 +47,7 @@ export default function CardAdditionalData({ advertisement }) {
                       src={logo}
                       alt="animation"
                       color="white"
-                      style={{ width: '50%', height: 'auto' }}
+                      style={{ width: "50%", height: "auto" }}
                     />
                   </div>
                   <WarningAmberTwoToneIcon fontSize="large" />
@@ -58,7 +58,7 @@ export default function CardAdditionalData({ advertisement }) {
                     </Typography>
                     <br />
                     <Typography variant="body1" color="text.secondary">
-                      {truncateText(ad.text)}
+                      {ad.text ? truncateText(ad.text) : ""}
                     </Typography>
                   </CardContent>
                 </CardActionArea>

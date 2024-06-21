@@ -10,7 +10,6 @@ import { SeeMore } from "../buttons/SeeMore";
 
 const orange = "#DC7633 ";
 
-
 export default function OutlinedCard({ results }) {
   const MAX_TEXT_LENGTH = 70;
 
@@ -69,14 +68,14 @@ export default function OutlinedCard({ results }) {
                       color="text.secondary"
                       gutterBottom
                     >
-                      {truncateText(res.brand_name)}
+                      {res.brand_name ? truncateText(res.brand_name) : ""}
                     </Typography>
                     <Typography
                       variant="h6"
                       style={{ color: orange }}
                       component="div"
                     >
-                      {truncateText(res.generic_name)}
+                      {res.generic_name ? truncateText(res.generic_name) : ""}
                     </Typography>
                     {res.route
                       ? res.route.map((r) => {

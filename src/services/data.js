@@ -22,46 +22,69 @@ export const principalData = async () => {
 };
 
 export const AdvertisingData = async (id) => {
+  const dataAdvertising = [];
   try {
     const results = await getAdvertising(id);
-    const dataNew = [
+    const newData = [
+      {
+        title: "General data",
+        text: `${results[0].openfda.brand_name} , ${results[0].openfda.generic_name} , ${results[0].openfda.manufacturer_name}`,
+      },
       {
         title: "Indications",
         text: results[0].indications_and_usage
           ? results[0].indications_and_usage[0]
-          : "NO RESULTS",
+          : null,
       },
       {
         title: "Dosage and Administrator",
         text: results[0].dosage_and_administration
           ? results[0].dosage_and_administration[0]
-          : "NO RESULTS",
+          : null,
       },
       {
         title: "Adverse Reactions",
         text: results[0].adverse_reactions
           ? results[0].adverse_reactions[0]
-          : "NO RESULTS",
+          : null,
       },
       {
         title: "Contraindications",
         text: results[0].contraindications
           ? results[0].contraindications[0]
-          : "NO RESULTS",
+          : null,
       },
       {
         title: "Warnings",
-        text: results[0].warnings ? results[0].warnings[0] : "NO RESULTS",
+        text: results[0].warnings ? results[0].warnings[0] : null,
       },
       {
         title: "Active Ingredient",
         text: results[0].active_ingredient
           ? results[0].active_ingredient[0]
-          : "NO RESULTS",
+          : null,
+      },
+      {
+        title: "Ask to Doctor",
+        text: results[0].ask_doctor ? results[0].ask_doctor[0] : null,
+      },
+      {
+        title: "When Using",
+        text: results[0].when_using ? results[0].when_using[0] : null,
+      },
+      {
+        title: "Questions",
+        text: results[0].questions ? results[0].questions[0] : null,
       },
     ];
 
-    return dataNew;
+    newData.forEach((data) => {
+      if (data.text != null && data.text !== "") {
+        dataAdvertising.push(data);
+      }
+    });
+
+    return dataAdvertising;
   } catch (error) {
     console.error("Error getting data in principalData: ", error);
   }
