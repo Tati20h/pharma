@@ -9,8 +9,7 @@ import logo from "../../assets/img/logo.png";
 import { SeeMore } from "../buttons/SeeMore";
 
 const orange = "#DC7633 ";
-const black = "#010101";
-const gray = "#f5f5f5";
+
 
 export default function OutlinedCard({ results }) {
   const MAX_TEXT_LENGTH = 70;
@@ -28,7 +27,7 @@ export default function OutlinedCard({ results }) {
       spacing={3}
       justifyContent="space-evenly"
       alignItems="center"
-      style={{ padding: 50, gap: 20 }}
+      style={{ padding: 50, gap: 10 }}
     >
       {results.length > 0 ? (
         results.map((res) => {
@@ -36,7 +35,22 @@ export default function OutlinedCard({ results }) {
             <Box className="box" sx={{ minWidth: 300, height: "100%" }}>
               <Card
                 variant="outlined"
-                style={{ background: gray, color: black, opacity: 0.9 }}
+                sx={{
+                  backgroundColor: "#f5f5f5",
+                  color: "#010101",
+                  opacity: 0.9,
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  padding: 2,
+                  "@media (max-width: 600px)": {
+                    minWidth: "100%",
+                    padding: 1,
+                  },
+                  "@media (min-width: 600px)": {
+                    minWidth: 300,
+                  },
+                }}
               >
                 <React.Fragment>
                   <div>

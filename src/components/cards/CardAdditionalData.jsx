@@ -9,7 +9,7 @@ import logo from "../../assets/img/logo.png";
 import "@fontsource/roboto/700.css";
 
 export default function CardAdditionalData({ advertisement }) {
-  const MAX_TEXT_LENGTH = 700;
+  const MAX_TEXT_LENGTH = 420;
 
   const truncateText = (text) => {
     if (text.length <= MAX_TEXT_LENGTH) {
@@ -21,21 +21,22 @@ export default function CardAdditionalData({ advertisement }) {
   return (
     <Grid
       container
-      spacing={1}
+      spacing={2}
       justifyContent="center"
-      alignItems="center"
-      style={{ padding: 30, gap: 20 }}
+       alignItems="stretch"
+      style={{ padding: 30, gap: 20,  minHeight: "100vh" }}
     >
       {advertisement.length > 0 ? (
         advertisement.map((ad) => {
           return (
-            <Grid item xs={10} sm={4} md={4}>
+            <Grid item xs={12} sm={6} md={4} lg={3}>
               <Card
                 sx={{
-                  maxWidth: 500,
-                  height: "100%",
+                  maxWidth: 345,
+                 Height:"100%",
                   display: "flex",
                   flexDirection: "column",
+                  justifyContent: "space-between",
                   position: "relative",
                 }}
               >
@@ -46,13 +47,13 @@ export default function CardAdditionalData({ advertisement }) {
                       src={logo}
                       alt="animation"
                       color="white"
-                      width={120}
+                      style={{ width: '50%', height: 'auto' }}
                     />
                   </div>
                   <WarningAmberTwoToneIcon fontSize="large" />
 
                   <CardContent>
-                    <Typography gutterBottom variant="h4" component="div">
+                    <Typography gutterBottom variant="h5" component="div">
                       {ad.title}
                     </Typography>
                     <br />

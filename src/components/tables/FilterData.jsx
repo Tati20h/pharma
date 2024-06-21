@@ -26,7 +26,7 @@ export default function DataGridDemo() {
         height: "100%",
         color: "#000",
         left: 0,
-        padding: 2,
+        padding: 2.5,
         "&::before": {
           content: '""',
           position: "absolute",

@@ -49,6 +49,16 @@ export const AdvertisingData = async (id) => {
           ? results[0].contraindications[0]
           : "NO RESULTS",
       },
+      {
+        title: "Warnings",
+        text: results[0].warnings ? results[0].warnings[0] : "NO RESULTS",
+      },
+      {
+        title: "Active Ingredient",
+        text: results[0].active_ingredient
+          ? results[0].active_ingredient[0]
+          : "NO RESULTS",
+      },
     ];
 
     return dataNew;
