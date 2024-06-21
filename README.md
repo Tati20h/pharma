@@ -12,6 +12,8 @@ This project develops a modern and dynamic web platform using React that allows 
 
 The base data gets from: [The openFDA API](https://open.fda.gov/apis/)
 
+Note: The maximum limit allowed is 100 for any single Application Programming Interface call.
+
 ### Build Project
 
 To in install dependencies and build project you can run:

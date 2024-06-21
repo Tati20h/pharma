@@ -17,7 +17,7 @@ export const getFullData = async () => {
 };
 
 export const getDataByName = async (name) => {
-  const url = `${baseUrl}/ndc.json?search=brand_name:${name}&limit=40`;
+  const url = `${baseUrl}/ndc.json?search=brand_name:${name}&limit=100`;
   try {
     const response = await fetch(url);
     if (!response.ok) {
