@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/pharma/static/css/main.50a8706d.css",
-    "main.js": "/pharma/static/js/main.ea47f3e5.js",
+    "main.js": "/pharma/static/js/main.3a2a1d1e.js",
     "static/media/logo.png": "/pharma/static/media/logo.fe60c5a12cf567c63c7c.png",
     "static/media/roboto-latin-700-normal.woff2": "/pharma/static/media/roboto-latin-700-normal.227c93190fe7f82de3f8.woff2",
     "static/media/roboto-cyrillic-ext-700-normal.woff2": "/pharma/static/media/roboto-cyrillic-ext-700-normal.be4d02458ce53887dc37.woff2",
@@ -20,10 +20,10 @@
     "static/media/roboto-greek-ext-700-normal.woff": "/pharma/static/media/roboto-greek-ext-700-normal.249853776d22a271b2b5.woff",
     "index.html": "/pharma/index.html",
     "main.50a8706d.css.map": "/pharma/static/css/main.50a8706d.css.map",
-    "main.ea47f3e5.js.map": "/pharma/static/js/main.ea47f3e5.js.map"
+    "main.3a2a1d1e.js.map": "/pharma/static/js/main.3a2a1d1e.js.map"
   },
   "entrypoints": [
     "static/css/main.50a8706d.css",
-    "static/js/main.ea47f3e5.js"
+    "static/js/main.3a2a1d1e.js"
   ]
 }
